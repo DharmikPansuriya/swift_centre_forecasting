@@ -14,6 +14,7 @@ if (!GEMINI_KEY) {
 }
 
 const server = serve({
+  port: Number(process.env.PORT ?? process.env.BUN_PORT ?? 3000),
   routes: {
     "/*": index,
     "/api/forecast": buildForecastRoute(forecastService, forecastRequestSchema),

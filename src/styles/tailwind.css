@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+  }
+
+  :root {
+    color: #0b1526;
+    background-color: #eef2f9;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-app-gradient font-sans text-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    @apply m-0;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-[24px] bg-white/95 p-8 shadow-card backdrop-blur-lg lg:p-10;
+  }
+
+  .glass-card-highlight {
+    @apply rounded-[24px] border border-[#4c62ff]/20 bg-card-highlight p-8 shadow-card backdrop-blur-lg lg:p-10;
+  }
+
+  .pill {
+    @apply inline-flex items-center justify-center rounded-full px-3 py-1 text-[0.8rem] font-semibold uppercase tracking-[0.08em];
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center gap-2 rounded-2xl border border-[#4c62ff]/25 bg-[#f4f7ff]/95 px-6 py-3 text-base font-semibold text-[#1f2a5f] shadow-[0_10px_24px_-18px_rgba(31,42,95,0.55)] transition-transform duration-150 ease-out hover:-translate-y-[2px] hover:shadow-[0_18px_38px_-20px_rgba(31,42,95,0.6)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#4c62ff] via-[#7b9dff] to-[#4c62ff] px-6 py-3 text-base font-semibold text-white shadow-[0_12px_28px_-16px_rgba(69,110,255,0.7)] transition-transform duration-150 ease-out hover:-translate-y-[2px] hover:shadow-[0_16px_34px_-16px_rgba(69,110,255,0.75)] focus:outline-none disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0;
+  }
+}

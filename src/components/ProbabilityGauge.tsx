@@ -23,12 +23,13 @@ export default function ProbabilityGauge({
 
   return (
     <div
-      className="probability-dial"
+      className="flex w-[190px] min-w-[190px] items-center justify-center"
       title={`${safeValue.toFixed(1)}% · ${verdictCopy}`}
     >
       <svg
         viewBox="0 0 160 160"
         role="img"
+        className="h-[190px] w-[190px] -rotate-90"
         aria-label={`Probability ${safeValue.toFixed(1)} percent`}
       >
         <defs>
@@ -44,18 +45,22 @@ export default function ProbabilityGauge({
           </linearGradient>
         </defs>
         <circle
-          className="probability-dial__track"
+          className="fill-none stroke-[rgba(76,98,255,0.08)]"
           cx="80"
           cy="80"
           r={radius}
+          strokeWidth={14}
         />
         <circle
-          className="probability-dial__progress"
+          className="fill-none transition-[stroke-dashoffset] duration-500 ease-out"
           cx="80"
           cy="80"
           r={radius}
           strokeDasharray={`${circumference} ${circumference}`}
           strokeDashoffset={offset}
+          strokeWidth={14}
+          strokeLinecap="round"
+          stroke="url(#probabilityGradient)"
         />
       </svg>
     </div>
